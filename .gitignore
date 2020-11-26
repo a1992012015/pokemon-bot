@@ -10,9 +10,6 @@
 # testing
 /coverage
 
-# production
-/build
-
 # misc
 .DS_Store
 */.env.local
@@ -25,3 +22,5 @@
 */yarn-error.log*
 
 /.idea
+/bot/**/.lastupdate
+/bot/**/logs

@@ -5,7 +5,10 @@
   "scripts": {
     "start": "babel-node ./bin/www",
     "dev": "./node_modules/.bin/nodemon ./bin/www",
-    "demo": "babel-node ./middleware/tensorflow-middleware.js",
+    "start-mirai": "cd assets/mirai && ./miraiOK_darwin-amd64",
+    "demo-tensorflow": "babel-node services/tensorflow.service.js",
+    "demo-qq": "babel-node services/qq-bot.service.js",
+    "demo-mirai": "babel-node middleware/mirai.middleware.js",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,7 +26,9 @@
     "koa-logger": "^3.2.0",
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
-    "koa-static": "^5.0.0"
+    "koa-static": "^5.0.0",
+    "mirai-ts": "^0.7.9",
+    "serialport": "^9.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

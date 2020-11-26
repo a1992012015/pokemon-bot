@@ -5,8 +5,9 @@ import bodyparser from 'koa-bodyparser';
 import logger from 'koa-logger';
 import path from 'path';
 
-import history from './middleware/history-middleware';
 import index from './routes/index';
+import history from './middleware/history.middleware';
+import startMirai from "./middleware/mirai.middleware";
 
 const app = new Koa()
 
@@ -20,6 +21,8 @@ app.use(logger())
 app.use(history());
 app.use(require('koa-static')(path.join(__dirname, './view')));
 app.use(index.routes())// routes
+
+app.use(startMirai())
 
 // logger
 app.use(async (ctx, next) => {
