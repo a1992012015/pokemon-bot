@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv').config();
 const app = require('../app');
 const debug = require('debug')('demo:server');
 const http = require('http');
@@ -13,7 +13,6 @@ const http = require('http');
  */
 
 const port = normalizePort(process.env.PORT || '3000');
-// app.set('port', port);
 
 /**
  * Create HTTP server.
@@ -86,5 +85,6 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
+  console.log('bind', bind);
   debug('Listening on ' + bind);
 }

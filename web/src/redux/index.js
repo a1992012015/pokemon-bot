@@ -5,12 +5,10 @@ import { routerMiddleware } from 'connected-react-router/immutable';
 import immutableTransform from 'redux-persist-transform-immutable';
 import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
-import Immutable, { Map } from 'immutable';
+import Immutable from 'immutable';
 
 import { combineReducer, history } from './reducers';
-import { rootSaga } from './sagaWatch';
-import { axiosMiddleware } from './middleware/axiosMiddleware';
-import { middlewareOptions } from '../services/requestService';
+import { rootSaga } from './saga-watch';
 import { autoMergeLevel2 } from './middleware/autoMergeLevel2';
 
 /**
@@ -39,16 +37,16 @@ const rootPersistConfig = {
   transforms: [immutableTransform()],
   storage: storage,
   timeout: null,
-  stateReconciler: autoMergeLevel2,
+  stateReconciler: autoMergeLevel2
 };
 
 const store = configureStore({
   reducer: persistReducer(rootPersistConfig, combineReducer()),
-  middleware: [axiosMiddleware(middlewareOptions), sagaMiddleware, routerMiddleware(history)],
-  initialState: { auth: Map({ loading: false, infoLoading: false }) },
+  middleware: [sagaMiddleware, routerMiddleware(history)],
+  initialState: {},
   serialize: {
-    immutable: Immutable,
-  },
+    immutable: Immutable
+  }
 });
 
 const persists = persistStore(store);
@@ -70,5 +68,5 @@ export {
   store,
   persists,
   history,
-  injectReducer,
+  injectReducer
 };

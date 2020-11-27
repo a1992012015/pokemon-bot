@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { RouterLoading } from './routerLoading';
-import { BaseComponent } from '../../baseClass/ShouldComponentUpdate';
+import { BaseComponent } from '../../base-class/should-component-update';
 
 const ALL_INITIALIZERS = [];
 const READY_INITIALIZERS = [];

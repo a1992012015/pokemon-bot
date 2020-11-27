@@ -1,17 +1,16 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { Menu } from 'antd';
-import { hot } from 'react-hot-loader';
 
 import { homeMenu } from './configs/homeMenuConfig';
 import { loadable } from './components/HOComponent/loadable';
 import { wrap } from './components/HOComponent/wrap';
 import { SwitchDefault } from './components/HOComponent/switchDefault';
-import { BaseComponent } from './baseClass/ShouldComponentUpdate';
+import { BaseComponent } from './base-class/should-component-update';
 
 import styles from './App.module.scss';
 
-const FindSeed = loadable(() => import('./pages/FindSeed/FindSeed'));
+const FindSeed = loadable(() => import('./pages/find-seed/find-seed'));
 
 class App extends BaseComponent {
   constructor(props) {
@@ -65,4 +64,4 @@ class App extends BaseComponent {
   };
 }
 
-export default process.env.NODE_ENV === 'development' ? hot(module)(App) : App;
+export default App;

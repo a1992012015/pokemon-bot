@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { createBrowserHistory } from 'history';
 import { connectRouter } from 'connected-react-router/immutable';
 
-import { authReducer } from './authReducer';
+import { gameReducer } from './game.reducer';
 
 const history = createBrowserHistory();
 
@@ -15,21 +15,19 @@ const createReducerCreator = (reducers) => {
   return (extraReducers = {}) => {
     return combineReducers(
       Object.assign(
-        {
-          router: connectRouter(history),
-        },
+        { router: connectRouter(history) },
         reducers,
-        extraReducers,
-      ),
+        extraReducers
+      )
     );
   };
 };
 
 const combineReducer = createReducerCreator({
-  auth: authReducer,
+  game: gameReducer
 });
 
 export {
   combineReducer,
-  history,
+  history
 };

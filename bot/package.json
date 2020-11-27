@@ -9,6 +9,8 @@
     "demo-tensorflow": "babel-node services/tensorflow.service.js",
     "demo-qq": "babel-node services/qq-bot.service.js",
     "demo-mirai": "babel-node middleware/mirai.middleware.js",
+    "demo-serial": "babel-node services/serial.service.js",
+    "demo-test": "babel-node services/test.service.js",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +19,7 @@
     "@tensorflow/tfjs-node": "^2.7.0",
     "connect-history-api-fallback": "^1.6.0",
     "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
     "ejs": "~2.3.3",
     "http-proxy-agent": "^4.0.1",
     "koa": "^2.7.0",
@@ -27,12 +30,15 @@
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
     "mirai-ts": "^0.7.9",
+    "moment": "^2.29.1",
     "serialport": "^9.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/node": "^7.12.6",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.1"
   }
 }

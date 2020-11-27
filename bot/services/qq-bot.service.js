@@ -15,7 +15,6 @@ config.forEach((text) => {
     }
   })
 })
-console.log('findConfig', findConfig);
 
 // 你的 QQ 号
 const qq = 1823965805;

@@ -20,7 +20,6 @@ module.exports = {
   },
   alias: {},
   plugins: [
-    { plugin: CracoReactHotReloadPlugin },
     {
       plugin: CracoLessPlugin,
       options: {

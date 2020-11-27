@@ -6,9 +6,9 @@ import { pathToRegexp } from 'path-to-regexp';
 import { loadable } from './loadable';
 import { wrap } from './wrap';
 import { routerTransition, transitionList } from '../../configs/routerTransitionConfig';
-import { BaseComponent } from '../../baseClass/ShouldComponentUpdate';
+import { BaseComponent } from '../../base-class/should-component-update';
 
-const Error = loadable(() => import('../../pages/Error/Error'));
+const Error = loadable(() => import('../../pages/error/error'));
 
 /**
  * 默认路由跳转，添加路由跳转动画
