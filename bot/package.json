@@ -6,11 +6,6 @@
     "start": "babel-node ./bin/www",
     "dev": "./node_modules/.bin/nodemon ./bin/www",
     "start-mirai": "cd assets/mirai && ./miraiOK_darwin-amd64",
-    "demo-tensorflow": "babel-node services/tensorflow.service.js",
-    "demo-qq": "babel-node services/qq-bot.service.js",
-    "demo-mirai": "babel-node middleware/mirai.middleware.js",
-    "demo-serial": "babel-node services/serial.service.js",
-    "demo-test": "babel-node services/test.service.js",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

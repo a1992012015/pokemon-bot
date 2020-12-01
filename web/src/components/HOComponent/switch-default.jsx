@@ -5,7 +5,7 @@ import { pathToRegexp } from 'path-to-regexp';
 
 import { loadable } from './loadable';
 import { wrap } from './wrap';
-import { routerTransition, transitionList } from '../../configs/routerTransitionConfig';
+import { routerTransition, transitionList } from '../../configs/router-transition.config';
 import { BaseComponent } from '../../base-class/should-component-update';
 
 const Error = loadable(() => import('../../pages/error/error'));

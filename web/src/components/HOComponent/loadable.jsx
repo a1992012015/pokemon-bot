@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { RouterLoading } from './routerLoading';
+import { RouterLoading } from './router-loading';
 import { BaseComponent } from '../../base-class/should-component-update';
 
 const ALL_INITIALIZERS = [];

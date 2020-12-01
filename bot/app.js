@@ -10,6 +10,7 @@ import index from './routes/index';
 import history from './middleware/history.middleware';
 import startMirai from "./middleware/mirai.middleware";
 import startSerial from './middleware/serial.middleware';
+import qqBot from './middleware/qq-bot.middleware';
 
 const app = new Koa()
 
@@ -23,8 +24,9 @@ app.use(logger())
 app.use(history());
 app.use(require('koa-static')(path.join(__dirname, './view')));
 
+app.use(startMirai())
+app.use(qqBot())
 app.use(startSerial())
-// app.use(startMirai())
 
 // logger
 app.use(async (ctx, next) => {

@@ -27,6 +27,26 @@ class GameService extends RequestService {
   autoCapture = (data) => {
     return this.defaultRequest.post(`/api/auto-capture`, data);
   };
+
+  /**
+   * 让switch输入密码开始连接交换
+   * @returns {Promise<void>}
+   */
+  linkExchange = () => {
+    return this.defaultRequest.get(`/api/link-exchange`);
+  };
+
+  /**
+   * 让switch停止现有的操作
+   * @returns {Promise<void>}
+   */
+  stopActive = () => {
+    return this.defaultRequest.get(`/api/stop-active`);
+  };
+
+  startExchange = () => {
+    return this.defaultRequest.get(`/api/start-exchange`);
+  }
 }
 
 export default new GameService();

@@ -1,10 +1,11 @@
 import {
   GAME_ACTION_RESPONSE,
   GAME_AUTO_CAPTURE_POKEMON,
-  GAME_CLICK_ONE_BUTTON,
+  GAME_CLICK_ONE_BUTTON, GAME_LINK_EXCHANGE,
   GAME_LINK_NETWORK,
   GAME_LOADING,
-  GAME_LOADING_MAP
+  GAME_LOADING_MAP, GAME_START_EXCHANGE,
+  GAME_STOP_ACTIVE
 } from '../action-types/game.type';
 
 class GameAction {
@@ -37,7 +38,7 @@ class GameAction {
    * 自动战斗捕获精灵
    * @param isRestart string 是否要重启游戏
    * @param battleTime number 战斗持续的时间
-   * @returns {{payload: {battleTime: number, isRestart: string}, type: string}}
+   * @returns {{payload: {battle_time: *, restart: *, loading: string}, type: string}}
    */
   autoCaptureAction = (isRestart, battleTime) => {
     return {
@@ -45,6 +46,39 @@ class GameAction {
       payload: { loading: GAME_LOADING_MAP.BATTLE, restart: isRestart, battle_time: battleTime }
     };
   };
+
+  /**
+   * 连接交换任务
+   * @returns {{payload: {loading: string}, type: string}}
+   */
+  linkExchangeAction = () => {
+    return {
+      type: GAME_LINK_EXCHANGE,
+      payload: { loading: GAME_LOADING_MAP.LINK_EXCHANGE }
+    };
+  };
+
+  /**
+   * 让switch停止现在有的所有操作
+   * @returns {{type: string}}
+   */
+  stopActiveAction = () => {
+    return {
+      type: GAME_STOP_ACTIVE,
+      payload: { loading: GAME_LOADING_MAP.STOP_ACTIVE }
+    };
+  };
+
+  /**
+   * 让switch开始交换精灵
+   * @returns {{payload: {loading: string}, type: string}}
+   */
+  startExchangeAction = () => {
+    return {
+      type: GAME_START_EXCHANGE,
+      payload: { loading: GAME_LOADING_MAP.START_EXCHANGE }
+    };
+  }
 
   loadingAction = (loading) => {
     return {

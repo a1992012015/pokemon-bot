@@ -7,7 +7,7 @@ const environments = {
   development,
   production,
   qa,
-  dev,
+  dev
 };
 
 const reactAppEnvironment = process.env.REACT_APP_ENVIRONMENT || 'production';
@@ -16,9 +16,9 @@ const reactAppEnvironment = process.env.REACT_APP_ENVIRONMENT || 'production';
 console.log(`%cenvironments => ${reactAppEnvironment}`, 'color: red; font-style: italic;');
 
 const environment = {
-  ...environments[reactAppEnvironment],
+  ...environments[reactAppEnvironment]
 };
 
 export {
-  environment,
+  environment
 };

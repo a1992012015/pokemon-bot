@@ -2,21 +2,21 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { Menu } from 'antd';
 
-import { homeMenu } from './configs/homeMenuConfig';
+import { homeMenu } from './configs/home-menu.onfig';
 import { loadable } from './components/HOComponent/loadable';
 import { wrap } from './components/HOComponent/wrap';
-import { SwitchDefault } from './components/HOComponent/switchDefault';
+import { SwitchDefault } from './components/HOComponent/switch-default';
 import { BaseComponent } from './base-class/should-component-update';
 
 import styles from './App.module.scss';
 
-const FindSeed = loadable(() => import('./pages/find-seed/find-seed'));
+const FindSeed = loadable(() => import('./pages/bot-controller/bot-controller'));
 
 class App extends BaseComponent {
   constructor(props) {
     super(props);
     this.state = {
-      defaultPath: this.getRouterPath(),
+      defaultPath: this.getRouterPath()
     };
   }
 
@@ -46,7 +46,7 @@ class App extends BaseComponent {
         </Menu>
 
         <SwitchDefault history={history}>
-          <Route exact={true} path='/find-seed' component={wrap(FindSeed)}/>
+          <Route exact={true} path='/bot-controller' component={wrap(FindSeed)}/>
           <Redirect exact={true} from='/' to='/find-seed'/>
         </SwitchDefault>
       </div>

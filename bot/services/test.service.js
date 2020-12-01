@@ -1,7 +1,9 @@
-import childProcess from "child_process";
+import serialService from './serial.service';
 
-console.log(process.env);
-console.log(process.env.BOT_PASSWORD);
-childProcess.exec('ls /dev/tty.usb*', (error, stdout) => {
-  console.log('stdout', stdout);
+serialService.init().then(() => {
+  console.log('init...');
+  serialService.autoRelease().then(() => {
+    console.log('完成 autoRelease...');
+  });
 });
+
